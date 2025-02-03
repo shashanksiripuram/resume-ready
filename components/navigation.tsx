@@ -25,8 +25,8 @@ const routes = [
     label: "Contact",
   },
   {
-    href: "/docs",
-    label: "Docs",
+    href: "/dashboard",
+    label: "Dashboard",
   },
 ];
 
