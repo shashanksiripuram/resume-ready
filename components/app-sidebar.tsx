@@ -26,18 +26,23 @@ import {
 import { items } from "./dashboard-menu-items";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
+import { LucideFileText } from "lucide-react";
 
 export function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar>
-        <SidebarHeader className="text-xl font-bold">
-            Resume Ready
+    <Sidebar className="flex justify-between">
+        <SidebarHeader className="flex flex-row justify-center items-center pt-5 text-lg md:text-2xl font-bold text-purple-600">
+            <LucideFileText className="h-10 w-10" />
+            <div className="flex flex-col">
+              <span>Resume Ready</span>
+              <span className="text-xs">AI AGENT</span>
+            </div>
         </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="flex justify-center">
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => {
@@ -50,12 +55,12 @@ export function AppSidebar() {
                         <CollapsibleTrigger asChild>
                           <SidebarMenuButton 
                             className={cn(
-                              "relative",
-                              isActive && "bg-accent text-accent-foreground"
+                              "relative py-5 hover:bg-purple-600 hover:text-accent-foreground hover:text-white rounded-md transition-colors",
+                              isActive && "bg-purple-600 text-accent-foreground text-white"
                             )}
                           >
-                            <div className="flex items-center gap-2">
-                              {item.icon && <item.icon className="h-4 w-4" />}
+                            <div className="flex items-center gap-2 text-base">
+                              {item.icon && <item.icon className="h-5 w-5" />}
                               <span>{item.title}</span>
                             </div>
                             <ChevronRight className={cn(
@@ -70,8 +75,8 @@ export function AppSidebar() {
                               <Link 
                                 href={subItem.href}
                                 className={cn(
-                                  "flex flex-col gap-1 px-4 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors",
-                                  pathname === subItem.href && "bg-accent text-accent-foreground"
+                                  "flex flex-col gap-1 px-4 py-2 hover:bg-purple-600 hover:text-accent-foreground hover:text-white rounded-md transition-colors",
+                                  pathname === subItem.href && "bg-purple-600 text-accent-foreground text-white"
                                 )}
                               >
                                 <span className="font-medium">{subItem.title}</span>
@@ -89,10 +94,11 @@ export function AppSidebar() {
                       <Link href={item.href || "#"} className="w-full">
                         <SidebarMenuButton 
                           className={cn(
-                            isActive && "bg-accent text-accent-foreground"
+                            "py-5",
+                            isActive && "bg-purple-600 text-accent-foreground text-white"
                           )}
                         >
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-base">
                             {item.icon && <item.icon className="h-4 w-4" />}
                             <span>{item.title}</span>
                           </div>

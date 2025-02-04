@@ -11,6 +11,7 @@ import {
   Shield,
   Home,
   ChevronRight,
+  LucideFileText
 } from "lucide-react";
 
 // Menu items.
@@ -54,6 +55,27 @@ export const items: SidebarItem[] = [
         title: "Real-time",
         href: "/analytics/realtime",
         description: "Monitor real-time analytics",
+      },
+    ],
+  },
+  {
+    title: "Resume Builder",
+    icon: LucideFileText,
+    items: [
+      {
+        title: "Editor",
+        href: "/dashboard/resume/editor",
+        description: "Resume Editor WYSIWYG",
+      },
+      {
+        title: "Imports",
+        href: "/resume/imports",
+        description: "Uploaded resumes",
+      },
+      {
+        title: "Exports",
+        href: "/dashboard/resume/exports",
+        description: "Downlaod edited resumes",
       },
     ],
   },
@@ -103,27 +125,6 @@ export const items: SidebarItem[] = [
     title: "Messages",
     icon: Mail,
     href: "/messages",
-  },
-  {
-    title: "Resume Building Tools",
-    icon: ShoppingCart,
-    items: [
-      {
-        title: "Editor",
-        href: "/dashbaord/resume/editor",
-        description: "Resume Editor WYSIWYG",
-      },
-      {
-        title: "Imports",
-        href: "/resume/imports",
-        description: "Uploaded resumes",
-      },
-      {
-        title: "Exports",
-        href: "/dashbaord/resume/exports",
-        description: "Downlaod edited resumes",
-      },
-    ],
   },
   {
     title: "Files",
