@@ -105,23 +105,23 @@ export const items: SidebarItem[] = [
     href: "/messages",
   },
   {
-    title: "E-commerce",
+    title: "Resume Building Tools",
     icon: ShoppingCart,
     items: [
       {
-        title: "Products",
-        href: "/ecommerce/products",
-        description: "Manage product catalog",
+        title: "Editor",
+        href: "/dashbaord/resume/editor",
+        description: "Resume Editor WYSIWYG",
       },
       {
-        title: "Orders",
-        href: "/ecommerce/orders",
-        description: "View and manage orders",
+        title: "Imports",
+        href: "/resume/imports",
+        description: "Uploaded resumes",
       },
       {
-        title: "Customers",
-        href: "/ecommerce/customers",
-        description: "Manage customer information",
+        title: "Exports",
+        href: "/dashbaord/resume/exports",
+        description: "Downlaod edited resumes",
       },
     ],
   },
