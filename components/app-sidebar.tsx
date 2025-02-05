@@ -94,7 +94,7 @@ export function AppSidebar() {
                       <Link href={item.href || "#"} className="w-full">
                         <SidebarMenuButton 
                           className={cn(
-                            "py-5",
+                            "py-5 hover:bg-purple-600 hover:text-accent-foreground hover:text-white rounded-md transition-colors",
                             isActive && "bg-purple-600 text-accent-foreground text-white"
                           )}
                         >
