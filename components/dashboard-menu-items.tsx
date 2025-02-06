@@ -11,7 +11,11 @@ import {
   Shield,
   Home,
   ChevronRight,
-  LucideFileText
+  LucideFileText,
+  LucideFiles,
+  LucideHardHat,
+  LucideBrainCircuit,
+  LucideNavigation
 } from "lucide-react";
 
 // Menu items.
@@ -27,34 +31,55 @@ export type SidebarItem = {
 };
 
 export const items: SidebarItem[] = [
-  {
-    title: "Home",
-    icon: Home,
-    href: "/",
-  },
+  // {
+  //   title: "Home",
+  //   icon: Home,
+  //   href: "/",
+  // },
   {
     title: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
   },
   {
-    title: "Analytics",
-    icon: BarChart2,
+    title: "Documents",
+    icon: LucideFiles,
     items: [
       {
-        title: "Overview",
-        href: "/analytics/overview",
+        title: "Files",
+        href: "/dashboard/documents/files",
         description: "View your analytics overview",
       },
       {
         title: "Reports",
-        href: "/analytics/reports",
+        href: "/dashboard/documents/reports",
         description: "Generate and view reports",
       },
       {
         title: "Real-time",
-        href: "/analytics/realtime",
+        href: "/dashboard/documents/realtime",
         description: "Monitor real-time analytics",
+      },
+    ],
+  },
+  {
+    title: "Job Search",
+    icon: LucideHardHat,
+    items: [
+      {
+        title: "Explore",
+        href: "/dashboard/jobs/explore",
+        description: "View your analytics overview",
+      },
+      {
+        title: "Your List",
+        href: "/dashboard/jobs/list",
+        description: "Monitor real-time analytics",
+      },
+      {
+        title: "History",
+        href: "/dashboard/jobs/history",
+        description: "Generate and view reports",
       },
     ],
   },
@@ -63,13 +88,18 @@ export const items: SidebarItem[] = [
     icon: LucideFileText,
     items: [
       {
+        title: "Create New",
+        href: "/dashboard/resume/create",
+        description: "Create Resume",
+      },
+      {
         title: "Editor",
         href: "/dashboard/resume/editor",
         description: "Resume Editor WYSIWYG",
       },
       {
         title: "Imports",
-        href: "/resume/imports",
+        href: "/dashboard/resume/imports",
         description: "Uploaded resumes",
       },
       {
@@ -80,47 +110,68 @@ export const items: SidebarItem[] = [
     ],
   },
   {
-    title: "Users",
-    icon: Users,
+    title: "AI Auto Apply",
+    icon: LucideBrainCircuit,
     items: [
       {
-        title: "All Users",
-        href: "/users",
+        title: "Customize profile",
+        href: "/dashboard/AI-apply/customize",
         description: "Manage user accounts",
       },
       {
-        title: "Roles",
-        href: "/users/roles",
+        title: "Your List",
+        href: "/dashboard/AI-apply/list",
         description: "Manage user roles and permissions",
       },
       {
-        title: "Teams",
-        href: "/users/teams",
+        title: "History",
+        href: "/dashboard/AI-apply/history",
         description: "Manage team structures",
       },
     ],
   },
   {
-    title: "Content",
-    icon: FileText,
+    title: "Job Tracking",
+    icon: LucideNavigation,
     items: [
       {
-        title: "Pages",
-        href: "/content/pages",
-        description: "Manage website pages",
+        title: "Explore",
+        href: "/dashboard/jobs/explore",
+        description: "View your analytics overview",
       },
       {
-        title: "Blog Posts",
-        href: "/content/posts",
-        description: "Manage blog content",
+        title: "Your List",
+        href: "/dashboard/jobs/list",
+        description: "Monitor real-time analytics",
       },
       {
-        title: "Media Library",
-        href: "/content/media",
-        description: "Manage media files",
+        title: "History",
+        href: "/dashboard/jobs/history",
+        description: "Generate and view reports",
       },
     ],
   },
+  // {
+  //   title: "Content",
+  //   icon: FileText,
+  //   items: [
+  //     {
+  //       title: "Pages",
+  //       href: "/content/pages",
+  //       description: "Manage website pages",
+  //     },
+  //     {
+  //       title: "Blog Posts",
+  //       href: "/content/posts",
+  //       description: "Manage blog content",
+  //     },
+  //     {
+  //       title: "Media Library",
+  //       href: "/content/media",
+  //       description: "Manage media files",
+  //     },
+  //   ],
+  // },
   {
     title: "Messages",
     icon: Mail,

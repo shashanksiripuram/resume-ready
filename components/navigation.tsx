@@ -47,7 +47,7 @@ export function Navigation({ setIsOpen }: NavigationProps) {
   return (
     <nav className={cn(
       "flex",
-      isMobile ? "flex-col space-y-4" : "items-center space-x-6"
+      isMobile ? "flex-col space-y-4" : "items-center space-x-1"
     )}>
       {routes.map((route) => (
         <Link
@@ -55,10 +55,10 @@ export function Navigation({ setIsOpen }: NavigationProps) {
           href={route.href}
           onClick={handleClick}
           className={cn(
-            "text-sm transition-colors hover:text-primary",
+            "text-sm transition-colors hover:text-white",
             pathname === route.href
-              ? "font-bold mr-4 text-gray-900 bg-yellow-300 py-2 px-4 rounded-lg shadow-md"
-              : "text-blue-500 mr-4 py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-gray-200 hover:text-blue-700",
+              ? "font-bold mr-4 text-white bg-purple-600 py-2 px-4 rounded-lg shadow-md"
+              : "text-blue-500 mr-4 py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-purple-600 hover:text-white",
             isMobile && "text-base py-2"
           )}
         >

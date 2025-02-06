@@ -11,7 +11,7 @@ export default function Hero() {
         <p className="text-lg sm:text-xl mb-8">
           Create a polished resume quickly and easily, impress potential employers, and get noticed.
         </p>
-        <Link href="/dashboard/resume/editor" className="bg-yellow-400 text-indigo-900 py-3 px-6 rounded-full text-lg font-semibold hover:bg-yellow-500 transition duration-300">
+        <Link href="/dashboard/resume/create" className="bg-yellow-400 text-indigo-900 py-3 px-6 rounded-full text-lg font-semibold hover:bg-yellow-500 transition duration-300">
           
             Get Started
           

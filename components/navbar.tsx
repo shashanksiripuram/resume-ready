@@ -21,16 +21,15 @@ export function Navbar() {
     checkScreenSize();
 
     // Add event listener
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
     // Cleanup
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
-
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -50,7 +49,16 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link href="/" className="text-xl font-bold">
-            Resume Ready
+            <div className="flex flex-row items-center gap-1">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+              <span>Resume Ready</span>
+            </div>
           </Link>
         </div>
 
@@ -58,8 +66,6 @@ export function Navbar() {
         <div className="hidden md:block">
           <Navigation />
         </div>
-
-        
 
         <div className="flex items-center gap-4">
           <SignedOut>

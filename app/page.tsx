@@ -9,7 +9,7 @@ export default function Home() {
     //   <Button>Button from Shadcn</Button>
     // </div>
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container mx-auto px-4 py-8">
         {/* <ResumeBuilder /> */}
         <Hero />
