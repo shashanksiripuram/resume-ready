@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Input } from "@/components/ui/input";
 import { TemplatesCarousel } from "@/components/templates-carousel";
+import Link from "next/link";
 
 export default function ResumeCreate() {
   const [personalInfo, setPersonalInfo] = useState("");
@@ -124,12 +125,13 @@ export default function ResumeCreate() {
         </div>
 
         <div className="flex justify-center">
+          <Link href="/dashboard/resume/editor">
           <Button
             size="lg"
             className="text-lg md:px-20 bg-purple-600 hover:bg-purple-700"
           >
             Generate Resume
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </>

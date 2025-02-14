@@ -138,10 +138,11 @@ export function TemplatesCarousel() {
                 className={`h-80 m-2 z-5 flex flex-col justify-between items-center shadow-md border border-gray-300 hover:shadow-lg transition-all 
               ${
                 selectedPdf === template
-                  ? "border-purple-500 ring-2 ring-purple-300"
+                  ? "border-purple-500 ring-4 ring-purple-400"
                   : ""
               }`}
                 onClick={() => setSelectedPdf(template)}
+                onDoubleClick={() => openModal(template)}
               >
                 {/* Radio Button */}
                 <input
@@ -180,12 +181,12 @@ export function TemplatesCarousel() {
                   </Document>
                 </CardContent>
               </Card>
-              <button
+              {/* <button
                 onClick={() => openModal(template)}
                 className="p-2 w-fit bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
               >
                 Preview
-              </button>
+              </button> */}
             </div>
           ))}
         </Slider>
