@@ -141,8 +141,8 @@ export function TemplatesCarousel() {
                   ? "border-purple-500 ring-4 ring-purple-400"
                   : ""
               }`}
-                onClick={() => setSelectedPdf(template)}
-                onDoubleClick={() => openModal(template)}
+                onClick={() => openModal(template)}
+                onDoubleClick={() => setSelectedPdf(template)}
               >
                 {/* Radio Button */}
                 <input
