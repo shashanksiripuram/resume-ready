@@ -15,7 +15,8 @@ import {
   LucideFiles,
   LucideHardHat,
   LucideBrainCircuit,
-  LucideNavigation
+  LucideNavigation,
+  LucideMessageSquarePlus
 } from "lucide-react";
 
 // Menu items.
@@ -172,58 +173,79 @@ export const items: SidebarItem[] = [
   //     },
   //   ],
   // },
+  // {
+  //   title: "Messages",
+  //   icon: Mail,
+  //   href: "/messages",
+  // },
   {
-    title: "Messages",
-    icon: Mail,
-    href: "/messages",
-  },
-  {
-    title: "Files",
-    icon: FolderTree,
+    title: "Company Reviews",
+    icon: LucideMessageSquarePlus,
     items: [
       {
-        title: "Documents",
-        href: "/files/documents",
-        description: "View and manage documents",
+        title: "Latest Reviews",
+        href: "/company-reviews/latest-reviews",
+        description: "latest reviews",
       },
       {
-        title: "Shared",
-        href: "/files/shared",
-        description: "Access shared files",
+        title: "Top Reviews",
+        href: "/company-reviews/top-reviews",
+        description: "top reviews",
       },
       {
         title: "Archives",
-        href: "/files/archives",
-        description: "View archived files",
+        href: "/company-reviews/archives",
+        description: "View archived reviews",
       },
     ],
   },
-  {
-    title: "Notifications",
-    icon: Bell,
-    href: "/notifications",
-  },
-  {
-    title: "Security",
-    icon: Shield,
-    items: [
-      {
-        title: "Settings",
-        href: "/security/settings",
-        description: "Manage security settings",
-      },
-      {
-        title: "Audit Log",
-        href: "/security/audit",
-        description: "View security audit logs",
-      },
-      {
-        title: "Access Control",
-        href: "/security/access",
-        description: "Manage access controls",
-      },
-    ],
-  },
+  // {
+  //   title: "Files",
+  //   icon: FolderTree,
+  //   items: [
+  //     {
+  //       title: "Documents",
+  //       href: "/files/documents",
+  //       description: "View and manage documents",
+  //     },
+  //     {
+  //       title: "Shared",
+  //       href: "/files/shared",
+  //       description: "Access shared files",
+  //     },
+  //     {
+  //       title: "Archives",
+  //       href: "/files/archives",
+  //       description: "View archived files",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Notifications",
+  //   icon: Bell,
+  //   href: "/notifications",
+  // },
+  // {
+  //   title: "Security",
+  //   icon: Shield,
+  //   items: [
+  //     {
+  //       title: "Settings",
+  //       href: "/security/settings",
+  //       description: "Manage security settings",
+  //     },
+  //     {
+  //       title: "Audit Log",
+  //       href: "/security/audit",
+  //       description: "View security audit logs",
+  //     },
+  //     {
+  //       title: "Access Control",
+  //       href: "/security/access",
+  //       description: "Manage access controls",
+  //     },
+  //   ],
+  // },
   {
     title: "Settings",
     icon: Settings,

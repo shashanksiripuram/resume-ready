@@ -27,6 +27,7 @@ import { items } from "./dashboard-menu-items";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
 import { LucideFileText } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -109,7 +110,7 @@ export function AppSidebar() {
                           )}
                         >
                           <div className="flex items-center gap-2 text-base">
-                            {item.icon && <item.icon className="h-4 w-4" />}
+                            {item.icon && <item.icon className="h-5 w-5" />}
                             <span>{item.title}</span>
                           </div>
                         </SidebarMenuButton>
@@ -123,6 +124,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="flex items-center">
+        <ThemeToggle />
         <SignedOut>
           <SignInButton mode="modal">
             <Button variant="secondary">Sign In</Button>

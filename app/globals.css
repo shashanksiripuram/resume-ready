@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -44,39 +42,40 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
-    --background: 315 15% 12%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 270 15% 14%; /* #241B2F - Deep purplish grey */
+    --foreground: 270 40% 85%; /* #D8C7E6 - Soft lavender */
+    --card: 270 20% 18%; /* #2D2340 - Dark purple */
+    --card-foreground: 270 40% 85%; /* #D8C7E6 */
+    --popover: 270 20% 18%;
+    --popover-foreground: 270 40% 85%;
+    --primary: 270 50% 75%; /* #A388D9 - Light purple */
+    --primary-foreground: 270 15% 14%;
+    --secondary: 270 25% 25%; /* #45345A - Muted purple */
+    --secondary-foreground: 270 40% 85%;
+    --muted: 270 25% 25%;
+    --muted-foreground: 270 35% 60%;
+    --accent: 270 35% 40%; /* #6C4B87 - Medium purple */
+    --accent-foreground: 270 40% 85%;
+    --destructive: 0 55% 50%; /* #B34040 - Soft red */
+    --destructive-foreground: 270 40% 90%;
+    --border: 270 25% 25%; /* #45345A */
+    --input: 270 25% 25%;
+    --ring: 270 50% 60%; /* Muted purple */
+    --chart-1: 260 60% 50%; /* Blue-purple */
+    --chart-2: 280 50% 55%; /* Violet */
+    --chart-3: 290 50% 45%; /* Dark lavender */
+    --chart-4: 300 55% 50%; /* Soft magenta */
+    --chart-5: 330 60% 50%; /* Deep pink */
+    --sidebar-background: 270 20% 18%; /* #2D2340 */
+    --sidebar-foreground: 270 40% 85%;
+    --sidebar-primary: 270 50% 70%; /* #9378C0 */
+    --sidebar-primary-foreground: 270 15% 14%;
+    --sidebar-accent: 270 25% 25%;
+    --sidebar-accent-foreground: 270 40% 85%;
+    --sidebar-border: 270 25% 25%;
+    --sidebar-ring: 270 50% 60%;
   }
 }
 
@@ -88,4 +87,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

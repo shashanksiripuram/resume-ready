@@ -1,53 +1,74 @@
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+"use client"
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { BlogArticle } from "@/types/blogpost"
 
 export default function BlogHome() {
+  const [posts, setPosts] = useState<BlogArticle[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get('https://679e58cf946b0e23c0633355.mockapi.io/blogposts')
+        // setting timeout
+        await new Promise((resolve) => setTimeout(resolve, 3000))
+        setPosts(response.data)
+      } catch (error) {
+        console.error('Error fetching posts:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchPosts()
+  }, [])
+
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Blog Home</h1>
-      
-      {/* Blog Articles Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-          <Card className="p-4 shadow-md hover:shadow-lg transition">
-            <CardHeader>
-              <h2 className="text-xl font-semibold">Blog Post First Post</h2>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-              </p>
-              <Button className="mt-4">
-                <Link href={`/blog/first-post`}>Read More</Link>
-              </Button>
-            </CardContent>
-          </Card>
-          <Card className="p-4 shadow-md hover:shadow-lg transition">
-            <CardHeader>
-              <h2 className="text-xl font-semibold">Blog Post Second Post</h2>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-500">
-                L, consectetur Inorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neadipiscing elit. Inorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-              </p>
-              <Button className="mt-4">
-                <Link href={`/blog/second-post`}>Read More</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-8">Latest Articles</h1>
+        {loading ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(6)].map((_, i) => (
+              <Card key={i} className="h-[200px] animate-pulse">
+                <CardHeader>
+                  <div className="h-6 bg-muted rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-muted rounded w-full"></div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-between">
+                    <div className="h-4 bg-muted rounded w-1/4"></div>
+                    <div className="h-4 bg-muted rounded w-1/4"></div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <Link href={`/blog/${post.slug}`} key={post.id}>
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-xl mb-2">{post.title}</CardTitle>
+                    </div>
+                    <CardDescription>{post.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                      <span>{post.readTime} min read</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
-      
-      {/* Navigation Links */}
-      <div className="mt-8 flex flex-col items-center gap-4">
-        <Link href="/about-us" className="text-lg text-blue-600 hover:underline">
-          About Us
-        </Link>
-        <Link href="/contact-us" className="text-lg text-blue-600 hover:underline">
-          Contact Us
-        </Link>
-      </div>
-    </div>
-  );
+  )
 }

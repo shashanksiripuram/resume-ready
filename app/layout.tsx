@@ -33,7 +33,7 @@ export default function RootLayout({
           {!isDashboard && <Navbar />}
           <main className="min-h-screen">{children}</main>
         </Providers>
-        <footer className="bg-slate-900 text-white p-4 text-center">
+        <footer className="dark:bg-purple-900 bg-gray-800 text-white p-4 text-center">
           © Resume Ready
         </footer>
       </body>
