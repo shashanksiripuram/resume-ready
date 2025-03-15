@@ -36,7 +36,7 @@ export function AppSidebar() {
     <Sidebar className="flex justify-between">
       <SidebarHeader className="">
         {/* <LucideFileText className="h-10 w-10" /> */}
-        <Link href="/" className="flex flex-row justify-center items-center pt-5 text-lg md:text-2xl font-bold text-purple-600">
+        <Link href="/" className="flex flex-row justify-center items-center pt-5 text-lg md:text-2xl font-bold text-purple-600 dark:text-white">
           <img src="/logo.png" alt="" className="h-10 w-10" />
           <div className="flex flex-col">
             <span>Resume Ready</span>
