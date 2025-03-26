@@ -1,28 +1,15 @@
-# Use Node 18 (required for React 19)
-FROM node:18
+FROM node:18  # Node 18.20.7
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files first (better caching)
-COPY package*.json ./
-
-# Install dependencies (ignore peer conflicts)
-RUN npm install -g npm@latest && \
+# Install a compatible npm version (for Node 18)
+RUN npm install -g npm@10.8.2 && \
     npm install --legacy-peer-deps
 
-# Install Sharp for Next.js image optimization
-RUN npm install sharp
-
-# Copy the rest of the app
+COPY package*.json ./
 COPY . .
 
-# Set build-time env vars (if needed)
-ENV NODE_ENV=production
-
-# Run the build
 RUN npm run build
 
-# Expose port and start the app
 EXPOSE 3000
 CMD ["npm", "start"]
