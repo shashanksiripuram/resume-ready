@@ -1,15 +1,15 @@
-FROM node:18
-
+FROM node:16-slim AS builder
 WORKDIR /app
-
-# Install a compatible npm version (for Node 18)
-RUN npm install -g npm@10.8.2 && \
-    npm install --legacy-peer-deps
-
 COPY package*.json ./
+RUN npm install
 COPY . .
-
 RUN npm run build
 
+# Stage 2: Production
+FROM builder AS final
+WORKDIR /app
+COPY --from=builder /app/build ./build
+COPY package*.json ./
+RUN npm install --production
 EXPOSE 3000
 CMD ["npm", "start"]
