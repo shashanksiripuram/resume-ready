@@ -1,10 +1,9 @@
-FROM node:18  # Node 18.20.7
+FROM node:18
 
 WORKDIR /app
 
-# Install a compatible npm version (for Node 18)
-RUN npm install -g npm@10.8.2 && \
-    npm install --legacy-peer-deps
+# Install dependencies (without upgrading npm)
+RUN npm install --legacy-peer-deps
 
 COPY package*.json ./
 COPY . .
