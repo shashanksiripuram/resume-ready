@@ -1,7 +1,15 @@
-FROM node:18  # ⚠️ Use Node 18 instead of 16 (React 19 requires newer Node)
+FROM node:16-slim AS builder
 WORKDIR /app
 COPY package*.json .
-RUN npm install --legacy-peer-deps  # 👈 This ignores peer dependency conflicts
+RUN npm install
 COPY . .
+RUN npm run build
+
+# Stage 2: Production
+FROM builder AS final
+WORKDIR /app
+COPY --from=builder /app/build ./build
+COPY package*.json .
+RUN npm install --production
 EXPOSE 3000
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
